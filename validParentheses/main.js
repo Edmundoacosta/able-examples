@@ -1,11 +1,9 @@
-function isBalance(string) {
-	var expression = string.split('');
-	let counter = 0;
-	for (var i = 0; i < expression.length; i++) {
-		if (expression[i] == '(') counter++;
-		else if (expression[i] == ')') counter--;
-	}
-	return counter==0?true: false;
+function isBalance(parens) {
+	var length = parens.length / 2;
+	  for (var i = 0; i <= length; ++i) {
+	    parens = parens.replace('()', '');
+	  }
+  return parens == '';
 }
 
 console.log(isBalance('()()()()()()()()()()()()()'));
